@@ -111,7 +111,7 @@ const Index = () => {
               <img
                 src="https://images.unsplash.com/photo-1676901831117-0494895c0ba1?ixlib=rb-4.0.3"
                 alt="Pakistani Physiotherapy Session"
-                className="rounded-2xl shadow-2xl animate-fadeIn"
+                className="rounded-2xl shadow-2xl animate-fadeIn w-full h-auto"
               />
             </div>
           </div>
