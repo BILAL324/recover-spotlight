@@ -57,21 +57,18 @@ const Index = () => {
       role: "Sports Professional",
       content: "The sports physiotherapy program helped me recover from my injury and return to professional playing within months.",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3",
     },
     {
       name: "Fatima Ali",
       role: "Recovery Patient",
       content: "After my surgery, their rehabilitation program was crucial in helping me regain my mobility and strength.",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?ixlib=rb-4.0.3",
     },
     {
       name: "Mohammad Imran",
       role: "Chronic Pain Patient",
       content: "Their chronic pain management techniques have significantly improved my quality of life.",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1566753323558-f4e0952af115?ixlib=rb-4.0.3",
     },
   ];
 
@@ -88,9 +85,6 @@ const Index = () => {
         <div className="container px-4 mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-12">
             <div className="flex-1 text-center md:text-left">
-              <span className="text-primary font-semibold mb-4 block animate-fadeIn">
-                First Home Physiotherapy Service Provider of Pakistan
-              </span>
               <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6 animate-fadeIn">
                 Expert Physiotherapy Care in Pakistan
               </h1>
@@ -109,8 +103,8 @@ const Index = () => {
             </div>
             <div className="flex-1">
               <img
-                src="https://images.unsplash.com/photo-1676901831117-0494895c0ba1?ixlib=rb-4.0.3"
-                alt="Pakistani Physiotherapy Session"
+                src="https://images.unsplash.com/photo-1666214280557-f1b5022eb634?ixlib=rb-4.0.3"
+                alt="Physiotherapy Session"
                 className="rounded-2xl shadow-2xl animate-fadeIn"
               />
             </div>
@@ -154,23 +148,16 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <Card key={index} className="p-8 hover:shadow-lg transition-shadow">
-                <div className="flex items-center mb-6">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-16 h-16 rounded-full object-cover mr-4"
-                  />
-                  <div>
-                    <p className="font-semibold">{testimonial.name}</p>
-                    <p className="text-sm text-gray-500">{testimonial.role}</p>
-                  </div>
-                </div>
                 <div className="flex items-center mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
                   ))}
                 </div>
                 <p className="text-gray-600 mb-4 italic">"{testimonial.content}"</p>
+                <div className="mt-4">
+                  <p className="font-semibold">{testimonial.name}</p>
+                  <p className="text-sm text-gray-500">{testimonial.role}</p>
+                </div>
               </Card>
             ))}
           </div>
@@ -239,15 +226,6 @@ const Index = () => {
                   <a href="https://wa.me/923081049699" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                     WhatsApp
                   </a>
-                </li>
-                <li>
-                  <Button 
-                    variant="outline" 
-                    className="mt-4 border-white text-white hover:bg-white/10"
-                    onClick={handleBookAppointment}
-                  >
-                    Contact Us
-                  </Button>
                 </li>
               </ul>
             </div>
