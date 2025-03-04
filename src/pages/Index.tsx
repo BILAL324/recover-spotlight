@@ -14,6 +14,8 @@ import {
   Workflow,
   Star,
   PhoneCall,
+  Mail,
+  Stethoscope,
 } from "lucide-react";
 
 const Index = () => {
@@ -71,6 +73,42 @@ const Index = () => {
       content: "Their chronic pain management techniques have significantly improved my quality of life.",
       rating: 5,
       image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80"
+    },
+  ];
+
+  const team = [
+    {
+      name: "Dr. Amina Khan",
+      role: "Senior Physiotherapist",
+      specialty: "Sports Rehabilitation",
+      bio: "10+ years of experience in sports injury rehabilitation and musculoskeletal therapy.",
+      image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300&q=80",
+      contact: {
+        phone: "+92-301-555-7890",
+        email: "dr.amina@physiohub.pk"
+      }
+    },
+    {
+      name: "Dr. Faisal Malik",
+      role: "Head of Neurological Therapy",
+      specialty: "Neurological Rehabilitation",
+      bio: "Specialized in stroke recovery and neurological conditions with 12 years of clinical experience.",
+      image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300&q=80",
+      contact: {
+        phone: "+92-333-444-5678",
+        email: "dr.faisal@physiohub.pk"
+      }
+    },
+    {
+      name: "Dr. Sara Ahmed",
+      role: "Pediatric Specialist",
+      specialty: "Pediatric Physiotherapy",
+      bio: "Dedicated to helping children with developmental challenges and physical disabilities.",
+      image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300&q=80",
+      contact: {
+        phone: "+92-321-987-6543",
+        email: "dr.sara@physiohub.pk"
+      }
     },
   ];
 
@@ -167,6 +205,50 @@ const Index = () => {
                   <div className="mt-4 text-center">
                     <p className="font-semibold">{testimonial.name}</p>
                     <p className="text-sm text-gray-500">{testimonial.role}</p>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section id="team" className="py-16 bg-white">
+        <div className="container px-4 mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Meet Our Expert Team</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Our team of qualified physiotherapists is dedicated to providing the highest quality care
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {team.map((member, index) => (
+              <Card key={index} className="p-8 hover:shadow-lg transition-shadow">
+                <div className="flex flex-col items-center">
+                  <div className="w-32 h-32 rounded-full overflow-hidden mb-6 border-2 border-primary">
+                    <img 
+                      src={member.image} 
+                      alt={`Dr. ${member.name}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h3 className="text-xl font-bold mb-1">{member.name}</h3>
+                  <p className="text-primary font-medium mb-1">{member.role}</p>
+                  <div className="flex items-center text-gray-500 mb-4">
+                    <Stethoscope className="h-4 w-4 mr-1" />
+                    <span className="text-sm">{member.specialty}</span>
+                  </div>
+                  <p className="text-gray-600 text-center mb-6">{member.bio}</p>
+                  <div className="w-full space-y-2">
+                    <div className="flex items-center text-gray-600">
+                      <PhoneCall className="h-4 w-4 mr-2 text-primary" />
+                      <span className="text-sm">{member.contact.phone}</span>
+                    </div>
+                    <div className="flex items-center text-gray-600">
+                      <Mail className="h-4 w-4 mr-2 text-primary" />
+                      <span className="text-sm">{member.contact.email}</span>
+                    </div>
                   </div>
                 </div>
               </Card>
