@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
@@ -57,18 +56,21 @@ const Index = () => {
       role: "Sports Professional",
       content: "The sports physiotherapy program helped me recover from my injury and return to professional playing within months.",
       rating: 5,
+      image: "https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80"
     },
     {
       name: "Fatima Ali",
       role: "Recovery Patient",
       content: "After my surgery, their rehabilitation program was crucial in helping me regain my mobility and strength.",
       rating: 5,
+      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80"
     },
     {
       name: "Mohammad Imran",
       role: "Chronic Pain Patient",
       content: "Their chronic pain management techniques have significantly improved my quality of life.",
       rating: 5,
+      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80"
     },
   ];
 
@@ -148,15 +150,24 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <Card key={index} className="p-8 hover:shadow-lg transition-shadow">
-                <div className="flex items-center mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                  ))}
-                </div>
-                <p className="text-gray-600 mb-4 italic">"{testimonial.content}"</p>
-                <div className="mt-4">
-                  <p className="font-semibold">{testimonial.name}</p>
-                  <p className="text-sm text-gray-500">{testimonial.role}</p>
+                <div className="flex flex-col items-center">
+                  <div className="w-20 h-20 rounded-full overflow-hidden mb-4 border-2 border-primary">
+                    <img 
+                      src={testimonial.image} 
+                      alt={`${testimonial.name}'s profile`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="flex items-center mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+                  <p className="text-gray-600 mb-4 italic text-center">"{testimonial.content}"</p>
+                  <div className="mt-4 text-center">
+                    <p className="font-semibold">{testimonial.name}</p>
+                    <p className="text-sm text-gray-500">{testimonial.role}</p>
+                  </div>
                 </div>
               </Card>
             ))}
